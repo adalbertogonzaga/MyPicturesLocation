@@ -16,7 +16,7 @@ This system was developed for my personal needs/purposes, since I like to have s
 
 The program was initially developed on August, 2016 and it was very "unusable", with a lot of features which were making it hard to use and to maintain, so I decided to get only the basic stuff, wrap it on a simple package and make it available. There are a lot of improvement opportunities, but for now it's enough for my needs. I got used to it...
 
-The last working version is already compiled and ready to donwload -> Look for the MyPicturesLocation.jar file
+The last working version is already compiled and ready to download -> Look for the MyPicturesLocation.jar file
 
 Cheers!
 
