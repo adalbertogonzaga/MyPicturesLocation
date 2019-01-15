@@ -1,6 +1,7 @@
 package adalbertogonzaga.geolocation;
 
 import java.awt.BorderLayout;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -86,6 +87,15 @@ public class YandexMapPanel extends JPanel implements DagaMapPanel {
 		}		
 	}
 	
+	private void checkImagesFolder() {
+		
+		File f = new File("./images/");
+		
+		if (!f.exists()) {
+			f.mkdirs();
+		}
+	}
+	
 	public void reloadMap() {
 		
 		String mapURLString = 
@@ -101,6 +111,8 @@ public class YandexMapPanel extends JPanel implements DagaMapPanel {
 		URL mapURL = null;
 		
 		try {
+			checkImagesFolder();
+			
 			mapURL = new URL(mapURLString);
 			
 			InputStream is = mapURL.openStream();
