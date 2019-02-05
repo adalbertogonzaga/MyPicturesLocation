@@ -1,7 +1,9 @@
 package adalbertogonzaga.mypicslocation;
 
+import java.awt.EventQueue;
+
 /**
- * Just a launcher class... the idea is to have a console version 
+ * Just a launcher class... the idea is to have a console version
  * 
  * @author Adalberto Gonzaga
  *
@@ -21,8 +23,16 @@ public class MyPicturesLocation {
 			
 			System.out.println("Starting in windowed mode...");
 			
-			MyPicturesLocationWindow myWindow = new MyPicturesLocationWindow();
-			myWindow.setVisible(true);
+			EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MyPicturesLocationWindow frame = new MyPicturesLocationWindow();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 		}
 		
 	}
