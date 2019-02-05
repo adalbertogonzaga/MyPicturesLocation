@@ -122,14 +122,22 @@ public class ExifGPSUtil {
 	 * @param latitude
 	 * @param longitude
 	 */
-	public static void insertGPSLocationIntoFile(File originalFile, File destinationFile, Double latitude, Double longitude) {
+	public static void insertGPSLocationIntoFile(File originalFile, File destinationFile, Double latitude, Double longitude) throws ClassCastException{
 
 		OutputStream os = null;
 		try {
 			TiffOutputSet outputSet = null;
 			// note that metadata might be null if no metadata is found.
 			IImageMetadata metadata = Sanselan.getMetadata(originalFile);
-			JpegImageMetadata jpegMetadata = (JpegImageMetadata) metadata;
+			JpegImageMetadata jpegMetadata = null;
+			try {
+				jpegMetadata = (JpegImageMetadata) metadata;
+			} catch (ClassCastException e) {
+				throw e;
+			} catch (Exception e) {
+				// TODO handle this
+				e.printStackTrace();
+			}
 			if (null != jpegMetadata) {
 				// note that exif might be null if no Exif metadata is found.
 				TiffImageMetadata exif = jpegMetadata.getExif();

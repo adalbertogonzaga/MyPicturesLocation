@@ -80,7 +80,7 @@ public class PicturesUtil {
 	 * @param latitude A Double value representing the Latitude. Desirable format: (-)50.123456
 	 * @param longitude A Double value representing the Longitude. Desirable format: (-)50.123456
 	 */
-	public static void insertGeolocation(File sourceData, Boolean createACopy, double latitude, double longitude) {
+	public static void insertGeolocation(File sourceData, Boolean createACopy, double latitude, double longitude) throws ClassCastException{
 		
 		
 		ArrayList<String> sourceFiles = new ArrayList<String>();

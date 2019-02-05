@@ -351,7 +351,14 @@ public class MyPicturesLocationWindow extends JFrame {
 			
 			if(confirmation == JOptionPane.YES_OPTION) {
 				System.out.println("YES");
-				PicturesUtil.insertGeolocation(location, createACopy, getLatitude(), getLongitude() );
+				try {
+					PicturesUtil.insertGeolocation(location, createACopy, getLatitude(), getLongitude() );
+				} catch (ClassCastException e) {
+					JOptionPane.showMessageDialog(this, "It looks like I can't handle a file. \nCheck if there's Exif support for the file(s) you're trying to use.", "Error handling file metadata", 0);
+					e.printStackTrace();
+					return;
+				}
+				
 				JOptionPane.showMessageDialog(this, "Done!", "Finished", JOptionPane.INFORMATION_MESSAGE);
 			} else {
 				System.out.println("NO");
