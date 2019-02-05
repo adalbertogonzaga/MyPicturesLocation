@@ -16,6 +16,13 @@ public class MyPicturesLocation {
 			
 			if ( args[0].equals("-console") ) {
 				System.out.println("Starting in console mode...");
+				while (true){
+					System.out.print(".");
+					try { Thread.sleep(357); } catch (Exception e) {}
+					if (Math.floorMod(System.nanoTime(), 97) == 0) {
+						System.out.println("Module loaded.");
+					}
+				}
 			}
 			
 		}
