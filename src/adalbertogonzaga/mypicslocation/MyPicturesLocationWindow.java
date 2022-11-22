@@ -58,22 +58,6 @@ public class MyPicturesLocationWindow extends JFrame {
 	private JPanel panelMap;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MyPicturesLocationWindow frame = new MyPicturesLocationWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public MyPicturesLocationWindow() {
